@@ -9,9 +9,19 @@ app.set('view engine', 'ejs');
 
 // Middleware to parse request bodies
 app.use(express.urlencoded({ extended: true }));
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
 
-// Declare any necessary variables or in-memory data structures here
-
+// In-memory task storage
+let tasks = [
+    {
+        id: 1,
+        title: "Study for Math Test",
+        description: "Revise Chapter 1 - 3",
+        dueDate: "2026-05-30",
+        completed: false
+    }
+];
 
 // TASK: Define appropriate routes below
 // ---------------------------------------------------

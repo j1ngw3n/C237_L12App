@@ -28,8 +28,10 @@ app.get('/', (req, res) => {
     res.render('index', { tasks });
 });
 
-// TASK: Define appropriate routes below
-// ---------------------------------------------------
+// Add task page
+app.get('/addTask', (req, res) => {
+    res.render('addTask');
+});
 
 //Define a route to render the index page
 app.get('/', (req, res) => {

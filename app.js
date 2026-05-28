@@ -33,6 +33,20 @@ app.get('/addTask', (req, res) => {
     res.render('addTask');
 });
 
+// Add task
+app.post('/addTask', (req, res) => {
+    const newTask = {
+        id: tasks.length + 1,
+        title: req.body.title,
+        description: req.body.description,
+        dueDate: req.body.dueDate,
+        completed: false
+    };
+
+    tasks.push(newTask);
+    res.redirect('/');
+});
+
 //Define a route to render the index page
 app.get('/', (req, res) => {
     res.render('index');

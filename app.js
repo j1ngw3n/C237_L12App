@@ -23,6 +23,11 @@ let tasks = [
     }
 ];
 
+// Home page
+app.get('/', (req, res) => {
+    res.render('index', { tasks });
+});
+
 // TASK: Define appropriate routes below
 // ---------------------------------------------------
 

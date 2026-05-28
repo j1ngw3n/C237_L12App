@@ -47,6 +47,12 @@ app.post('/addTask', (req, res) => {
     res.redirect('/');
 });
 
+// Edit task page
+app.get('/editTask/:id', (req, res) => {
+    const task = tasks.find(t => t.id == req.params.id);
+    res.render('editTask', { task });
+});
+
 //Define a route to render the index page
 app.get('/', (req, res) => {
     res.render('index');

@@ -53,6 +53,17 @@ app.get('/editTask/:id', (req, res) => {
     res.render('editTask', { task });
 });
 
+// Update task
+app.post('/editTask/:id', (req, res) => {
+    const task = tasks.find(t => t.id == req.params.id);
+
+    task.title = req.body.title;
+    task.description = req.body.description;
+    task.dueDate = req.body.dueDate;
+
+    res.redirect('/');
+});
+
 //Define a route to render the index page
 app.get('/', (req, res) => {
     res.render('index');

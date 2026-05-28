@@ -64,6 +64,12 @@ app.post('/editTask/:id', (req, res) => {
     res.redirect('/');
 });
 
+// Delete task
+app.get('/deleteTask/:id', (req, res) => {
+    tasks = tasks.filter(t => t.id != req.params.id);
+    res.redirect('/');
+});
+
 //Define a route to render the index page
 app.get('/', (req, res) => {
     res.render('index');

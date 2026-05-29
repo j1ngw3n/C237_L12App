@@ -81,13 +81,6 @@ app.get('/completeTask/:id', (req, res) => {
     res.redirect('/');
 });
 
-//Define a route to render the index page
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
-// ---------------------------------------------------
-
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
